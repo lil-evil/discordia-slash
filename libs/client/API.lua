@@ -5,7 +5,7 @@ local f = string.format
 -- therefor not defining them in their own file, although the actual requests are
 local endpoints = {
   APPLICATION_COMMAND                       = "/applications/%s/commands/%s",
-  APPLICATION_COMMANDS                      = "/applications/%s/commands",
+  APPLICATION_COMMANDS                      = "/applications/%s/commands?with_localizations=%s",
   APPLICATION_GUILD_COMMAND                 = "/applications/%s/guilds/%s/commands/%s",
   APPLICATION_GUILD_COMMANDS                = "/applications/%s/guilds/%s/commands",
   APPLICATION_GUILD_COMMANDS_PERMISSIONS    = "/applications/%s/guilds/%s/commands/permissions",
