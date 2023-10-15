@@ -13,7 +13,7 @@ local endpoints = {
 }
 
 function API:getGlobalApplicationCommands(application_id, with_localizations, with_localizations)
-  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false)
+  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false")
 
   return self:request("GET", endpoint)
 end
