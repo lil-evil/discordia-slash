@@ -12,14 +12,14 @@ local endpoints = {
   APPLICATION_GUILD_COMMAND_PERMISSIONS     = "/applications/%s/guilds/%s/commands/%s/permissions"
 }
 
-function API:getGlobalApplicationCommands(application_id, with_localizations, with_localizations)
+function API:getGlobalApplicationCommands(application_id, with_localizations)
   local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false")
 
   return self:request("GET", endpoint)
 end
 
-function API:createGlobalApplicationCommand(application_id, payload)
-  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id)
+function API:createGlobalApplicationCommand(application_id, payload, with_localizations)
+  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false")
 
   return self:request("POST", endpoint, payload)
 end
@@ -42,8 +42,8 @@ function API:deleteGlobalApplicationCommand(application_id, command_id)
   return self:request("DELETE", endpoint)
 end
 
-function API:bulkOverwriteGlobalApplicationCommands(application_id, payload)
-  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id)
+function API:bulkOverwriteGlobalApplicationCommands(application_id, payload, with_localizations)
+  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false")
 
   return self:request("PUT", endpoint, payload)
 end
