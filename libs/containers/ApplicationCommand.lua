@@ -11,7 +11,9 @@ function ApplicationCommand:__init(data, parent)
 	self._type = data.type
 	self._application_id = data.application_id
 	self._name = data.name
+	self._name_localizations = data.name_localizations
 	self._description = data.description
+	self._description_localizations = data.description_localizations
 	self._options = data.options
 	self._default_permission = data.default_permission
 	self._version = data.version
@@ -71,7 +73,15 @@ function get:name()
 	return self._name
 end
 
+function get:name_localizations()
+	return self._name
+end
+
 function get:description()
+	return self._description
+end
+
+function get:description_localizations()
 	return self._description
 end
 
