@@ -74,7 +74,7 @@ function get:name()
 end
 
 function get:name_localizations()
-	return self._name
+	return self._name_localizations
 end
 
 function get:description()
@@ -82,7 +82,7 @@ function get:description()
 end
 
 function get:description_localizations()
-	return self._description
+	return self._description_localizations
 end
 
 function get:options()
