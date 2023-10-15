@@ -12,8 +12,8 @@ local endpoints = {
   APPLICATION_GUILD_COMMAND_PERMISSIONS     = "/applications/%s/guilds/%s/commands/%s/permissions"
 }
 
-function API:getGlobalApplicationCommands(application_id)
-  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id)
+function API:getGlobalApplicationCommands(application_id, with_localizations, with_localizations)
+  local endpoint = f(endpoints.APPLICATION_COMMANDS, application_id, with_localizations and "true" or "false)
 
   return self:request("GET", endpoint)
 end
