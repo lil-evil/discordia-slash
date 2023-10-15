@@ -5,8 +5,8 @@ require("discordia-interactions")
 local Cache = discordia.class.classes.Cache
 local ApplicationCommand = require("containers/ApplicationCommand")
 
-function Client:getGlobalApplicationCommands()
-	local data, err = self._api:getGlobalApplicationCommands(self:getApplicationInformation().id)
+function Client:getGlobalApplicationCommands(with_localizations)
+	local data, err = self._api:getGlobalApplicationCommands(self:getApplicationInformation().id, with_localizations)
 
 	if data then
 		return Cache(data, ApplicationCommand, self)
